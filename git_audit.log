@@ -1,0 +1,37 @@
+2025-05-09 01:41:33,553 - INFO - Created new configuration file git_audit_config.json
+2025-05-09 01:41:33,553 - INFO - Please edit this file to configure your patterns, approvers, and repositories.
+2025-05-09 01:41:33,555 - INFO - Added approver jarvis to team iam
+2025-05-09 01:50:52,014 - ERROR - No repositories specified. Please add repositories to your config file, use --repo option, or specify a file with --repos-file.
+2025-05-09 01:51:20,853 - INFO - Created new configuration file git_audit_config.json
+2025-05-09 01:51:20,853 - INFO - Please edit this file to configure your patterns, approvers, and repositories.
+2025-05-09 01:51:20,855 - WARNING - Team IAM not found in patterns map.
+2025-05-09 01:51:48,013 - INFO - Added pattern 'principal' to iam
+2025-05-09 01:52:18,011 - ERROR - No repositories specified. Please add repositories to your config file, use --repo option, or specify a file with --repos-file.
+2025-05-09 01:52:55,428 - INFO - 
+====== Analyzing drewpypro/no-pr-repo ======
+2025-05-09 01:52:55,429 - INFO - Starting analysis of drewpypro/no-pr-repo
+2025-05-09 01:52:55,429 - INFO - Cloning drewpypro/no-pr-repo...
+2025-05-09 01:52:56,577 - INFO - Default branch for drewpypro/no-pr-repo is main
+2025-05-09 01:52:56,760 - INFO - Found direct commit: a66bda26 - Commit to Main...
+2025-05-09 01:52:56,760 - INFO - Found 1 direct commits in drewpypro/no-pr-repo
+2025-05-09 01:52:56,761 - INFO - Pulling latest from drewpypro/no-pr-repo...
+2025-05-09 01:52:57,550 - INFO - Found 0 PRs with relevant changes in drewpypro/no-pr-repo
+2025-05-09 01:52:57,550 - INFO - 
+====== Analyzing drewpypro/no-stakeholder-approval ======
+2025-05-09 01:52:57,550 - INFO - Starting analysis of drewpypro/no-stakeholder-approval
+2025-05-09 01:52:57,551 - INFO - Cloning drewpypro/no-stakeholder-approval...
+2025-05-09 01:52:58,748 - INFO - Default branch for drewpypro/no-stakeholder-approval is main
+2025-05-09 01:52:59,085 - INFO - Found 0 direct commits in drewpypro/no-stakeholder-approval
+2025-05-09 01:52:59,086 - INFO - Pulling latest from drewpypro/no-stakeholder-approval...
+2025-05-09 01:53:00,333 - INFO - Processed merge commit: d2ea1921 - PR #6
+2025-05-09 01:53:00,824 - INFO - Processed merge commit: 47ccaddb - PR #5
+2025-05-09 01:53:01,370 - INFO - Processed merge commit: 796fccb2 - PR #4
+2025-05-09 01:53:01,809 - INFO - Processed merge commit: 13205c5e - PR #3
+2025-05-09 01:53:02,528 - INFO - Processed merge commit: 0df68998 - PR #2
+2025-05-09 01:53:02,577 - INFO - Found 5 PRs with relevant changes in drewpypro/no-stakeholder-approval
+2025-05-09 01:53:02,579 - INFO - Wrote 1 rows to reports/direct_commits-20250509-015302.csv
+2025-05-09 01:53:02,581 - INFO - Wrote 5 rows to reports/merge_approvers-20250509-015302.csv
+2025-05-09 01:53:02,581 - INFO - 
+Analysis complete. CSV files created in the reports directory:
+2025-05-09 01:53:02,581 - INFO - - reports/direct_commits-20250509-015302.csv: All direct commits to main without PR
+2025-05-09 01:53:02,581 - INFO - - reports/merge_approvers-20250509-015302.csv: PRs with relevant changes and their approval status
