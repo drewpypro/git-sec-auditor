@@ -1,37 +1,178 @@
-2025-05-09 01:41:33,553 - INFO - Created new configuration file git_audit_config.json
-2025-05-09 01:41:33,553 - INFO - Please edit this file to configure your patterns, approvers, and repositories.
-2025-05-09 01:41:33,555 - INFO - Added approver jarvis to team iam
-2025-05-09 01:50:52,014 - ERROR - No repositories specified. Please add repositories to your config file, use --repo option, or specify a file with --repos-file.
-2025-05-09 01:51:20,853 - INFO - Created new configuration file git_audit_config.json
-2025-05-09 01:51:20,853 - INFO - Please edit this file to configure your patterns, approvers, and repositories.
-2025-05-09 01:51:20,855 - WARNING - Team IAM not found in patterns map.
-2025-05-09 01:51:48,013 - INFO - Added pattern 'principal' to iam
-2025-05-09 01:52:18,011 - ERROR - No repositories specified. Please add repositories to your config file, use --repo option, or specify a file with --repos-file.
-2025-05-09 01:52:55,428 - INFO - 
+2025-05-09 14:53:06,320 - INFO - Created new configuration file git_audit_config.json
+2025-05-09 14:53:06,320 - INFO - Please edit this file to configure your patterns, approvers, and repositories.
+2025-05-09 14:54:12,277 - INFO - 
 ====== Analyzing drewpypro/no-pr-repo ======
-2025-05-09 01:52:55,429 - INFO - Starting analysis of drewpypro/no-pr-repo
-2025-05-09 01:52:55,429 - INFO - Cloning drewpypro/no-pr-repo...
-2025-05-09 01:52:56,577 - INFO - Default branch for drewpypro/no-pr-repo is main
-2025-05-09 01:52:56,760 - INFO - Found direct commit: a66bda26 - Commit to Main...
-2025-05-09 01:52:56,760 - INFO - Found 1 direct commits in drewpypro/no-pr-repo
-2025-05-09 01:52:56,761 - INFO - Pulling latest from drewpypro/no-pr-repo...
-2025-05-09 01:52:57,550 - INFO - Found 0 PRs with relevant changes in drewpypro/no-pr-repo
-2025-05-09 01:52:57,550 - INFO - 
+2025-05-09 14:54:12,278 - INFO - Starting analysis of drewpypro/no-pr-repo
+2025-05-09 14:54:12,279 - INFO - Cloning drewpypro/no-pr-repo...
+2025-05-09 14:54:13,558 - INFO - Default branch for drewpypro/no-pr-repo is origin/main
+2025-05-09 14:54:13,595 - INFO - Found direct commit: a66bda26 - Commit to Main...
+2025-05-09 14:54:13,596 - INFO - Found direct commit: 62a77cf0 - Initial commit...
+2025-05-09 14:54:13,596 - INFO - Found 2 direct commits in drewpypro/no-pr-repo
+2025-05-09 14:54:13,599 - INFO - Wrote 2 rows to reports/direct_commits-20250509-145412.csv
+2025-05-09 14:54:13,600 - INFO - Pulling latest from drewpypro/no-pr-repo...
+2025-05-09 14:54:14,529 - INFO - Found 0 PRs with relevant changes in drewpypro/no-pr-repo
+2025-05-09 14:54:14,529 - INFO - 
+====== Analyzing drewpypro/doesntexist ======
+2025-05-09 14:54:14,529 - INFO - Starting analysis of drewpypro/doesntexist
+2025-05-09 14:54:14,530 - INFO - Cloning drewpypro/doesntexist...
+2025-05-09 14:54:15,289 - ERROR - Error cloning repository drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:54:15,290 - ERROR - Error cloning repository drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:54:15,290 - ERROR - Error getting direct commits for drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:54:15,291 - ERROR - Error getting direct commits for drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:54:15,291 - INFO - Found 0 direct commits in drewpypro/doesntexist
+2025-05-09 14:54:15,292 - INFO - Cloning drewpypro/doesntexist...
+2025-05-09 14:54:16,047 - ERROR - Error cloning repository drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:54:16,047 - ERROR - Error cloning repository drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:54:16,048 - ERROR - Error processing PR data for drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:54:16,048 - ERROR - Error processing PR data for drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:54:16,048 - INFO - Found 0 PRs with relevant changes in drewpypro/doesntexist
+2025-05-09 14:54:16,049 - INFO - 
 ====== Analyzing drewpypro/no-stakeholder-approval ======
-2025-05-09 01:52:57,550 - INFO - Starting analysis of drewpypro/no-stakeholder-approval
-2025-05-09 01:52:57,551 - INFO - Cloning drewpypro/no-stakeholder-approval...
-2025-05-09 01:52:58,748 - INFO - Default branch for drewpypro/no-stakeholder-approval is main
-2025-05-09 01:52:59,085 - INFO - Found 0 direct commits in drewpypro/no-stakeholder-approval
-2025-05-09 01:52:59,086 - INFO - Pulling latest from drewpypro/no-stakeholder-approval...
-2025-05-09 01:53:00,333 - INFO - Processed merge commit: d2ea1921 - PR #6
-2025-05-09 01:53:00,824 - INFO - Processed merge commit: 47ccaddb - PR #5
-2025-05-09 01:53:01,370 - INFO - Processed merge commit: 796fccb2 - PR #4
-2025-05-09 01:53:01,809 - INFO - Processed merge commit: 13205c5e - PR #3
-2025-05-09 01:53:02,528 - INFO - Processed merge commit: 0df68998 - PR #2
-2025-05-09 01:53:02,577 - INFO - Found 5 PRs with relevant changes in drewpypro/no-stakeholder-approval
-2025-05-09 01:53:02,579 - INFO - Wrote 1 rows to reports/direct_commits-20250509-015302.csv
-2025-05-09 01:53:02,581 - INFO - Wrote 5 rows to reports/merge_approvers-20250509-015302.csv
-2025-05-09 01:53:02,581 - INFO - 
+2025-05-09 14:54:16,049 - INFO - Starting analysis of drewpypro/no-stakeholder-approval
+2025-05-09 14:54:16,050 - INFO - Cloning drewpypro/no-stakeholder-approval...
+2025-05-09 14:54:17,299 - INFO - Default branch for drewpypro/no-stakeholder-approval is origin/main
+2025-05-09 14:54:17,346 - INFO - Found direct commit: 84308ba4 - Update README.md...
+2025-05-09 14:54:17,346 - INFO - Found direct commit: 63fd7cf7 - Initial commit...
+2025-05-09 14:54:17,347 - INFO - Found 2 direct commits in drewpypro/no-stakeholder-approval
+2025-05-09 14:54:17,351 - INFO - Wrote 2 rows to reports/direct_commits-20250509-145412.csv
+2025-05-09 14:54:17,353 - INFO - Pulling latest from drewpypro/no-stakeholder-approval...
+2025-05-09 14:54:18,729 - INFO - Processed merge commit: d2ea1921 - PR #6
+2025-05-09 14:54:19,223 - INFO - Processed merge commit: 47ccaddb - PR #5
+2025-05-09 14:54:19,789 - INFO - Processed merge commit: 796fccb2 - PR #4
+2025-05-09 14:54:20,269 - INFO - Processed merge commit: 13205c5e - PR #3
+2025-05-09 14:54:20,849 - INFO - Processed merge commit: 0df68998 - PR #2
+2025-05-09 14:54:20,903 - INFO - Found 5 PRs with relevant changes in drewpypro/no-stakeholder-approval
+2025-05-09 14:54:20,906 - INFO - Wrote 5 rows to reports/merge_approvers-20250509-145412.csv
+2025-05-09 14:54:20,906 - INFO - 
 Analysis complete. CSV files created in the reports directory:
-2025-05-09 01:53:02,581 - INFO - - reports/direct_commits-20250509-015302.csv: All direct commits to main without PR
-2025-05-09 01:53:02,581 - INFO - - reports/merge_approvers-20250509-015302.csv: PRs with relevant changes and their approval status
+2025-05-09 14:54:20,907 - INFO - - reports/direct_commits-20250509-145412.csv: All direct commits to main without PR
+2025-05-09 14:54:20,907 - INFO - - reports/merge_approvers-20250509-145412.csv: PRs with relevant changes and their approval status
+2025-05-09 14:57:19,337 - INFO - Added approver bobdickweed to team iam
+2025-05-09 14:57:50,226 - INFO - Added pattern 'bingbong' to iam
+2025-05-09 14:58:04,775 - INFO - 
+====== Analyzing drewpypro/no-pr-repo ======
+2025-05-09 14:58:04,776 - INFO - Starting analysis of drewpypro/no-pr-repo
+2025-05-09 14:58:04,777 - INFO - Pulling latest from drewpypro/no-pr-repo...
+2025-05-09 14:58:05,672 - INFO - Default branch for drewpypro/no-pr-repo is origin/main
+2025-05-09 14:58:05,719 - INFO - Found direct commit: a66bda26 - Commit to Main...
+2025-05-09 14:58:05,719 - INFO - Found direct commit: 62a77cf0 - Initial commit...
+2025-05-09 14:58:05,719 - INFO - Found 2 direct commits in drewpypro/no-pr-repo
+2025-05-09 14:58:05,722 - INFO - Wrote 2 rows to reports/direct_commits-20250509-145804.csv
+2025-05-09 14:58:05,724 - INFO - Pulling latest from drewpypro/no-pr-repo...
+2025-05-09 14:58:06,612 - INFO - Found 0 PRs with relevant changes in drewpypro/no-pr-repo
+2025-05-09 14:58:06,612 - INFO - 
+====== Analyzing drewpypro/doesntexist ======
+2025-05-09 14:58:06,612 - INFO - Starting analysis of drewpypro/doesntexist
+2025-05-09 14:58:06,613 - INFO - Cloning drewpypro/doesntexist...
+2025-05-09 14:58:07,354 - ERROR - Error cloning repository drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:58:07,354 - ERROR - Error cloning repository drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:58:07,355 - ERROR - Error getting direct commits for drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:58:07,355 - ERROR - Error getting direct commits for drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:58:07,355 - INFO - Found 0 direct commits in drewpypro/doesntexist
+2025-05-09 14:58:07,356 - INFO - Cloning drewpypro/doesntexist...
+2025-05-09 14:58:08,047 - ERROR - Error cloning repository drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:58:08,047 - ERROR - Error cloning repository drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:58:08,048 - ERROR - Error processing PR data for drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:58:08,048 - ERROR - Error processing PR data for drewpypro/doesntexist: Cmd('git') failed due to: exit code(128)
+  cmdline: git clone -v https://[REDACTED_TOKEN]@github.com/drewpypro/doesntexist.git cloned_repos/doesntexist
+  stderr: 'Cloning into 'cloned_repos/doesntexist'...
+remote: Repository not found.
+fatal: repository 'https://github.com/drewpypro/doesntexist.git/' not found
+'
+2025-05-09 14:58:08,049 - INFO - Found 0 PRs with relevant changes in drewpypro/doesntexist
+2025-05-09 14:58:08,049 - INFO - 
+====== Analyzing drewpypro/no-stakeholder-approval ======
+2025-05-09 14:58:08,049 - INFO - Starting analysis of drewpypro/no-stakeholder-approval
+2025-05-09 14:58:08,050 - INFO - Pulling latest from drewpypro/no-stakeholder-approval...
+2025-05-09 14:58:08,858 - INFO - Default branch for drewpypro/no-stakeholder-approval is origin/main
+2025-05-09 14:58:08,905 - INFO - Found direct commit: 84308ba4 - Update README.md...
+2025-05-09 14:58:08,906 - INFO - Found direct commit: 63fd7cf7 - Initial commit...
+2025-05-09 14:58:08,906 - INFO - Found 2 direct commits in drewpypro/no-stakeholder-approval
+2025-05-09 14:58:08,911 - INFO - Wrote 2 rows to reports/direct_commits-20250509-145804.csv
+2025-05-09 14:58:08,912 - INFO - Pulling latest from drewpypro/no-stakeholder-approval...
+2025-05-09 14:58:10,286 - INFO - Processed merge commit: d2ea1921 - PR #6
+2025-05-09 14:58:10,914 - INFO - Processed merge commit: 47ccaddb - PR #5
+2025-05-09 14:58:11,525 - INFO - Processed merge commit: 796fccb2 - PR #4
+2025-05-09 14:58:12,029 - INFO - Processed merge commit: 13205c5e - PR #3
+2025-05-09 14:58:12,626 - INFO - Processed merge commit: 0df68998 - PR #2
+2025-05-09 14:58:12,680 - INFO - Found 5 PRs with relevant changes in drewpypro/no-stakeholder-approval
+2025-05-09 14:58:12,683 - INFO - Wrote 5 rows to reports/merge_approvers-20250509-145804.csv
+2025-05-09 14:58:12,684 - INFO - 
+Analysis complete. CSV files created in the reports directory:
+2025-05-09 14:58:12,684 - INFO - - reports/direct_commits-20250509-145804.csv: All direct commits to main without PR
+2025-05-09 14:58:12,684 - INFO - - reports/merge_approvers-20250509-145804.csv: PRs with relevant changes and their approval status
