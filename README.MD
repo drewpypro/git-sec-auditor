@@ -1,4 +1,5 @@
 # git-sec-auditor
+[![codecov](https://codecov.io/gh/drewpypro/git-sec-auditor/graph/badge.svg?token=L7TBV3T029)](https://codecov.io/gh/drewpypro/git-sec-auditor)
 ![auditor-agent](img/auditor.gif)
 
 Audit tool that scans git repos for direct commits to main and changes requiring specific team approvals.
@@ -28,6 +29,9 @@ python git-sec-auditor.py --add-approver alice network_security --add-approver b
 
 # Add criteria on the fly
 python git-sec-auditor.py --add-criteria iam principal
+
+# Use since functionality
+python git-sec-auditor.py --since last-14-days 
 
 ```
 

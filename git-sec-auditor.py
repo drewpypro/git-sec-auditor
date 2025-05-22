@@ -121,6 +121,27 @@ def load_config(config_file):
         "repos": []
     }
 
+def get_since_date(time_range):
+    """Calculate the --since date based on time range."""
+    if not time_range:
+        return None
+    
+    from datetime import datetime, timedelta
+    
+    now = datetime.now()
+    if time_range == "last-24-hours":
+        since_date = now - timedelta(hours=24)
+    elif time_range == "last-7-days":
+        since_date = now - timedelta(days=7)
+    elif time_range == "last-14-days":
+        since_date = now - timedelta(days=14)
+    elif time_range == "last-30-days":
+        since_date = now - timedelta(days=30)
+    else:
+        return None
+    
+    return since_date.strftime("%Y-%m-%d")
+
 def save_config(config, config_file):
     """Save configuration to JSON file."""
     with open(config_file, 'w') as f:
@@ -207,33 +228,49 @@ def get_direct_commits_to_main(repo_name, github_token):
         
         # Determine default branch
         default_branch = None
-        for ref in repo.references:
-            if ref.name == 'origin/main':
-                default_branch = 'origin/main'
-                break
-            elif ref.name == 'origin/master':
-                default_branch = 'origin/master'
-                break
-        
+
+        try:
+
+            repo.remotes.origin.fetch()
+
+            for ref in repo.references:
+                if ref.name == 'origin/main':
+                    default_branch = 'origin/main'
+                    break
+                elif ref.name == 'origin/master':
+                    default_branch = 'origin/master'
+                    break
+            
+            if not default_branch:
+                try:
+                    head_ref = repo.remotes.origin.refs.HEAD.reference
+                    default_branch = f"origin/{head_ref.name}"
+                except:
+                    pass
+
+        except Exception as e:
+            logging.warning(f"Could not fetch remote refs: {e}")
+            
         if not default_branch:
-            # Try to get from remote info
-            for remote in repo.remotes:
-                for ref in remote.refs:
-                    if ref.name in ['origin/HEAD', 'origin/main', 'origin/master']:
-                        if 'main' in ref.name:
-                            default_branch = 'origin/main'
-                        else:
-                            default_branch = 'origin/master'
-                        break
-        
+            try:
+                if 'main' in [b.name for b in repo.branches]:
+                    default_branch = 'main'
+                elif 'master' in [b.name for b in repo.branches]:
+                    default_branch = 'master'
+            except:
+                pass
+
         if not default_branch:
-            default_branch = 'origin/main'
+            default_branch = 'main'
             
         logging.info(f"Default branch for {repo_name} is {default_branch}")
         
         # Find commits to main no PR
         try:
             direct_commit_cmd = ["git", "log", "--no-merges", "--first-parent", default_branch, "--format=%H||%an||%ad||%s"]
+            since_date = get_since_date(getattr(analyze_repo, 'time_range', None))
+            if since_date:
+                direct_commit_cmd.extend(["--since", since_date])
             direct_commit_result = repo.git.execute(direct_commit_cmd, with_extended_output=True)[1]
             
             for line in direct_commit_result.strip().split('\n'):
@@ -298,6 +335,9 @@ def get_pr_approvers_and_changes(repo_name, github_token, patterns):
         
         # Get all merge commits
         merge_commits_cmd = ["git", "log", "--merges", "--format=%H||%an||%ad||%s"]
+        since_date = get_since_date(getattr(analyze_repo, 'time_range', None))
+        if since_date:
+            merge_commits_cmd.extend(["--since", since_date])
         merge_commits_raw = repo.git.execute(merge_commits_cmd, with_extended_output=True)[1].strip().split('\n')
         
         for commit_line in merge_commits_raw:
@@ -471,7 +511,7 @@ def write_csv(filename, data, mode="w"):
     
     logging.info(f"Wrote {len(data)} rows to {filename}")
 
-def analyze_repo(repo_name, patterns, github_token):
+def analyze_repo(repo_name, patterns, github_token, time_range=None):
     """
     Analyze a repository and write results to files immediately.
     
@@ -487,6 +527,7 @@ def analyze_repo(repo_name, patterns, github_token):
     - merge_approvers_file: File to write merge approvals to
     """
     logging.info(f"Starting analysis of {repo_name}")
+    analyze_repo.time_range = time_range
     
     try:
         # Get direct commits to main if requested
@@ -559,6 +600,9 @@ def main():
                         help="Only check for direct commits to main branch")
     parser.add_argument("--approval-only", action="store_true", 
                         help="Only check for stakeholder approvals on PRs")
+    parser.add_argument("--since", choices=["last-24-hours", "last-7-days", "last-14-days", "last-30-days"], help="Git log '--since' filter for commits")
+
+
     
     args = parser.parse_args()
     
@@ -687,7 +731,8 @@ def main():
             direct_commits, merge_approvers = analyze_repo(
                 repo_name=repo,
                 patterns=patterns,
-                github_token=github_token
+                github_token=github_token,
+                time_range=args.since
             )
         except Exception as e:
             error_msg = f"Failed to analyze repository {repo}: {e}"
